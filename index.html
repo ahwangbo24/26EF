@@ -154,7 +154,7 @@
   <div class="wrap">
     <h1>VAS 설문</h1>
     <div class="subtitle">
-      연구 제목: [확인 필요]<br><br>
+      연구 제목: 게임형 인지과제 수행이 인지 기능, 의사 결정 및 심리 상태에 미치는 영향<br><br>
       지금 이 순간의 상태를 기준으로, 슬라이더를 움직여 응답해 주십시오.
     </div>
 
@@ -492,9 +492,13 @@
       return true;
     }
 
+    function sliderId(step) {
+      return 'vas' + step.slice(1);
+    }
+
     function bindVas(step) {
-      const slider = document.getElementById(step);
-      const valueEl = document.getElementById(step + 'Value');
+      const slider = document.getElementById(sliderId(step));
+      const valueEl = document.getElementById(sliderId(step) + 'Value');
       slider.addEventListener('input', () => {
         valueEl.textContent = slider.value;
         vasTouched[step] = true;
@@ -531,7 +535,7 @@
         responseDate: formatKSTDate(new Date())
       };
       vasSteps.forEach(step => {
-        data[step] = Number(document.getElementById(step).value);
+        data[step] = Number(document.getElementById(sliderId(step)).value);
       });
       data.freeText = document.getElementById('freeText').value.trim();
       return data;
