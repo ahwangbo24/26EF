@@ -1,6 +1,6 @@
 /**
  * 26EF VAS 설문 - Google Sheets 실시간 수집용 Apps Script
- * 15문항(식욕/충동성/정서·스트레스/피로·각성·집중/과제동기) VAS 구조 기준.
+ * 18문항(식욕/충동성/정서·스트레스/피로·각성·집중/지루함·졸림·어지럼/과제동기) VAS 구조 기준.
  *
  * 대상 시트:
  * https://docs.google.com/spreadsheets/d/1NE-bOcQhVB0MP_MkexHNVT6OGPTTOPESCM5_GWGNGfY/edit?gid=0#gid=0
@@ -23,12 +23,13 @@
  */
 
 var HEADERS = [
-  '제출시각(서버)', '연구등록번호', '이름', '응답날짜',
+  '제출시각(서버)', '연구등록번호', '이름', '방문회차', '응답날짜',
   '배고픔VAS', '포만감VAS', '배부름VAS', '추가섭취가능성VAS',
   '충동억제어려움VAS', '즉각만족욕구VAS', '신중판단어려움VAS', '기다림어려움VAS',
   '기분(불쾌-유쾌)VAS', '불안VAS', '스트레스VAS',
   '흥분도VAS', '집중도VAS', '피로도VAS',
   '과제동기VAS',
+  '지루함VAS', '졸림VAS', '어지럼VAS',
   '자유기술'
 ];
 
@@ -51,6 +52,7 @@ function doPost(e) {
       Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss'),
       val(data.regNumber),
       val(data.participantName),
+      val(data.visitSession),
       val(data.responseDate),
       val(data.vHunger),
       val(data.vSatiety),
@@ -67,6 +69,9 @@ function doPost(e) {
       val(data.vAttention),
       val(data.vFatigue),
       val(data.vMotivation),
+      val(data.vBoredom),
+      val(data.vDrowsiness),
+      val(data.vDizziness),
       val(data.freeText)
     ]);
 

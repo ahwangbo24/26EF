@@ -181,7 +181,7 @@
 
     <!-- 1: 배부름 -->
     <div class="card" data-step="vFullness">
-      <div class="progress-note">1 / 15</div>
+      <div class="progress-note">1 / 18</div>
       <div class="q-title">지금 배가 얼마나 부릅니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 배가 전혀 부르지 않다</span><span>100: 배가 매우 부르다</span></div>
@@ -197,7 +197,7 @@
 
     <!-- 2: 피로도 -->
     <div class="card" data-step="vFatigue">
-      <div class="progress-note">2 / 15</div>
+      <div class="progress-note">2 / 18</div>
       <div class="q-title">지금 이 순간, 얼마나 피로합니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 피로하지 않다</span><span>100: 극도로 피로하다</span></div>
@@ -213,7 +213,7 @@
 
     <!-- 3: 포만감 -->
     <div class="card" data-step="vSatiety">
-      <div class="progress-note">3 / 15</div>
+      <div class="progress-note">3 / 18</div>
       <div class="q-title">지금 포만감을 얼마나 느낍니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 느끼지 못한다</span><span>100: 극도로 느낀다</span></div>
@@ -229,7 +229,7 @@
 
     <!-- 4: 각성/흥분도 -->
     <div class="card" data-step="vArousal">
-      <div class="progress-note">4 / 15</div>
+      <div class="progress-note">4 / 18</div>
       <div class="q-title">지금 얼마나 흥분되어 있습니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 매우 차분하다</span><span>100: 매우 흥분되어 있다</span></div>
@@ -245,7 +245,7 @@
 
     <!-- 5: 기다림의 어려움 -->
     <div class="card" data-step="vWaiting">
-      <div class="progress-note">5 / 15</div>
+      <div class="progress-note">5 / 18</div>
       <div class="q-title">지금 기다리는 것이 평소보다 어렵게 느껴집니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 그렇지 않다</span><span>100: 매우 그렇다</span></div>
@@ -261,7 +261,7 @@
 
     <!-- 6: 기분 -->
     <div class="card" data-step="vMood">
-      <div class="progress-note">6 / 15</div>
+      <div class="progress-note">6 / 18</div>
       <div class="q-title">지금 기분이 전반적으로 어떠합니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 매우 불쾌하다</span><span>100: 매우 유쾌하다</span></div>
@@ -277,7 +277,7 @@
 
     <!-- 7: 추가 섭취 가능성 -->
     <div class="card" data-step="vMoreCapacity">
-      <div class="progress-note">7 / 15</div>
+      <div class="progress-note">7 / 18</div>
       <div class="q-title">지금 얼마나 더 먹을 수 있을 것 같습니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 더 먹을 수 없다</span><span>100: 엄청나게 더 먹을 수 있다</span></div>
@@ -291,9 +291,41 @@
       </div>
     </div>
 
-    <!-- 8: 배고픔 -->
+    <!-- 8: 졸림 -->
+    <div class="card" data-step="vDrowsiness">
+      <div class="progress-note">8 / 18</div>
+      <div class="q-title">지금 얼마나 졸립니까?</div>
+      <div class="vas-wrap">
+        <div class="vas-labels"><span>0: 전혀 졸리지 않다</span><span>100: 매우 졸리다</span></div>
+        <input type="range" id="vasDrowsiness" min="0" max="100" step="1" value="50">
+        <div class="vas-value" id="vasDrowsinessValue">50</div>
+      </div>
+      <div class="error-msg" id="err-vDrowsiness">슬라이더를 움직여 응답을 확인해 주세요.</div>
+      <div class="nav-row">
+        <button class="btn-secondary" onclick="goBack()">이전</button>
+        <button class="btn-primary" id="next-vDrowsiness" onclick="goNext('vDrowsiness')" disabled>다음</button>
+      </div>
+    </div>
+
+    <!-- 9: 어지럼 -->
+    <div class="card" data-step="vDizziness">
+      <div class="progress-note">9 / 18</div>
+      <div class="q-title">지금 얼마나 어지럽습니까?</div>
+      <div class="vas-wrap">
+        <div class="vas-labels"><span>0: 전혀 어지럽지 않다</span><span>100: 매우 어지럽다</span></div>
+        <input type="range" id="vasDizziness" min="0" max="100" step="1" value="50">
+        <div class="vas-value" id="vasDizzinessValue">50</div>
+      </div>
+      <div class="error-msg" id="err-vDizziness">슬라이더를 움직여 응답을 확인해 주세요.</div>
+      <div class="nav-row">
+        <button class="btn-secondary" onclick="goBack()">이전</button>
+        <button class="btn-primary" id="next-vDizziness" onclick="goNext('vDizziness')" disabled>다음</button>
+      </div>
+    </div>
+
+    <!-- 10: 배고픔 -->
     <div class="card" data-step="vHunger">
-      <div class="progress-note">8 / 15</div>
+      <div class="progress-note">10 / 18</div>
       <div class="q-title">지금 얼마나 배고픕니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 배고프지 않다</span><span>100: 극도로 배고프다</span></div>
@@ -307,9 +339,9 @@
       </div>
     </div>
 
-    <!-- 9: 스트레스 -->
+    <!-- 11: 스트레스 -->
     <div class="card" data-step="vStress">
-      <div class="progress-note">9 / 15</div>
+      <div class="progress-note">11 / 18</div>
       <div class="q-title">지금 스트레스를 얼마나 느끼고 있습니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 스트레스가 없다</span><span>100: 상상할 수 있는 최대 수준의 스트레스</span></div>
@@ -323,9 +355,25 @@
       </div>
     </div>
 
-    <!-- 10: 불안 -->
+    <!-- 12: 지루함 -->
+    <div class="card" data-step="vBoredom">
+      <div class="progress-note">12 / 18</div>
+      <div class="q-title">지금 얼마나 지루합니까?</div>
+      <div class="vas-wrap">
+        <div class="vas-labels"><span>0: 전혀 지루하지 않다</span><span>100: 매우 지루하다</span></div>
+        <input type="range" id="vasBoredom" min="0" max="100" step="1" value="50">
+        <div class="vas-value" id="vasBoredomValue">50</div>
+      </div>
+      <div class="error-msg" id="err-vBoredom">슬라이더를 움직여 응답을 확인해 주세요.</div>
+      <div class="nav-row">
+        <button class="btn-secondary" onclick="goBack()">이전</button>
+        <button class="btn-primary" id="next-vBoredom" onclick="goNext('vBoredom')" disabled>다음</button>
+      </div>
+    </div>
+
+    <!-- 13: 불안 -->
     <div class="card" data-step="vAnxiety">
-      <div class="progress-note">10 / 15</div>
+      <div class="progress-note">13 / 18</div>
       <div class="q-title">지금 불안함을 얼마나 느낍니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 불안하지 않다</span><span>100: 매우 불안하다</span></div>
@@ -339,9 +387,9 @@
       </div>
     </div>
 
-    <!-- 11: 집중도 -->
+    <!-- 14: 집중도 -->
     <div class="card" data-step="vAttention">
-      <div class="progress-note">11 / 15</div>
+      <div class="progress-note">14 / 18</div>
       <div class="q-title">지금 이 순간, 얼마나 잘 집중하고 있습니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 집중하지 못한다</span><span>100: 매우 잘 집중하고 있다</span></div>
@@ -355,9 +403,9 @@
       </div>
     </div>
 
-    <!-- 12: 과제 동기 -->
+    <!-- 15: 과제 동기 -->
     <div class="card" data-step="vMotivation">
-      <div class="progress-note">12 / 15</div>
+      <div class="progress-note">15 / 18</div>
       <div class="q-title">지금 이 활동/과제를 하고 싶은 동기가 어느 정도입니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 없다</span><span>100: 매우 강하다</span></div>
@@ -371,9 +419,9 @@
       </div>
     </div>
 
-    <!-- 13: 신중한 판단의 어려움 -->
+    <!-- 16: 신중한 판단의 어려움 -->
     <div class="card" data-step="vJudgment">
-      <div class="progress-note">13 / 15</div>
+      <div class="progress-note">16 / 18</div>
       <div class="q-title">지금 평소보다 신중하게 판단하는 데 어려움을 느낍니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 그렇지 않다</span><span>100: 매우 그렇다</span></div>
@@ -387,9 +435,9 @@
       </div>
     </div>
 
-    <!-- 14: 충동 억제 어려움 -->
+    <!-- 17: 충동 억제 어려움 -->
     <div class="card" data-step="vImpulseControl">
-      <div class="progress-note">14 / 15</div>
+      <div class="progress-note">17 / 18</div>
       <div class="q-title">지금 충동을 억제하기 어렵다고 느낍니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 그렇지 않다</span><span>100: 매우 그렇다</span></div>
@@ -403,9 +451,9 @@
       </div>
     </div>
 
-    <!-- 15: 즉각적 만족 욕구 -->
+    <!-- 18: 즉각적 만족 욕구 -->
     <div class="card" data-step="vImmediateGrat">
-      <div class="progress-note">15 / 15</div>
+      <div class="progress-note">18 / 18</div>
       <div class="q-title">지금 당장의 만족을 얻고 싶은 마음이 강합니까?</div>
       <div class="vas-wrap">
         <div class="vas-labels"><span>0: 전혀 그렇지 않다</span><span>100: 매우 그렇다</span></div>
@@ -459,8 +507,9 @@
     const order = [
       'q0',
       'vFullness', 'vFatigue', 'vSatiety', 'vArousal', 'vWaiting',
-      'vMood', 'vMoreCapacity', 'vHunger', 'vStress', 'vAnxiety',
-      'vAttention', 'vMotivation', 'vJudgment', 'vImpulseControl', 'vImmediateGrat',
+      'vMood', 'vMoreCapacity', 'vDrowsiness', 'vDizziness', 'vHunger',
+      'vStress', 'vBoredom', 'vAnxiety', 'vAttention', 'vMotivation',
+      'vJudgment', 'vImpulseControl', 'vImmediateGrat',
       'qEnd'
     ];
     const vasSteps = order.filter(s => s !== 'q0' && s !== 'qEnd');
@@ -557,7 +606,8 @@
       vImpulseControl: '충동억제어려움', vImmediateGrat: '즉각만족욕구', vJudgment: '신중판단어려움', vWaiting: '기다림어려움',
       vMood: '기분(불쾌-유쾌)', vAnxiety: '불안', vStress: '스트레스',
       vArousal: '흥분도', vAttention: '집중도', vFatigue: '피로도',
-      vMotivation: '과제동기'
+      vMotivation: '과제동기',
+      vBoredom: '지루함', vDrowsiness: '졸림', vDizziness: '어지럼'
     };
 
     function buildCsv(data) {
